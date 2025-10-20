@@ -1,59 +1,70 @@
 // feature slider
+let currentIndex = 0;
+
 function getSlidesPerView() {
     if (window.innerWidth <= 767) return 1;
     if (window.innerWidth <= 1024) return 2;
     return 3;
 }
 
-let currentIndex = 0;
-
-function showSlides(index) {
+function showSlides() {
+    const dotsContainer = document.querySelector('.dots-container');
     const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
+    const leftArrow = document.querySelector('.carousel-arrow.left');
+    const rightArrow = document.querySelector('.carousel-arrow.right');
     const slidesPerView = getSlidesPerView();
     const totalSlides = slides.length;
 
     // Tính số lần chuyển slide tối đa
     const maxIndex = totalSlides - slidesPerView;
-    if (index < 0) index = 0;
-    if (index > maxIndex) index = maxIndex;
 
-    // Ẩn tất cả slide
+    // Đảm bảo currentIndex nằm trong khoảng hợp lệ
+    if (currentIndex < 0) {
+        currentIndex = 0;
+    }
+    if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+    }
+
+    // Ẩn/hiện các slide dựa trên currentIndex
     slides.forEach((slide, i) => {
-        slide.style.display = (i >= index && i < index + slidesPerView) ? 'block' : 'none';
-    });
-    
-    // Cập nhật dot
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
+        slide.style.display = (i >= currentIndex && i < currentIndex + slidesPerView) ? 'block' : 'none';
     });
 
-    currentIndex = index;
+    // Xóa các dot cũ và tạo lại
+    dotsContainer.innerHTML = '';
+    const numDots = totalSlides - slidesPerView + 1;
+
+    if (numDots > 1) { // Chỉ hiển thị dot nếu có nhiều hơn 1 trang
+        for (let i = 0; i < numDots; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            dot.addEventListener('click', () => currentSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    const dots = document.querySelectorAll('.dot');
+
+    // Cập nhật trạng thái active cho dots
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+    });
+
+    // Cập nhật trạng thái của mũi tên
+    leftArrow.classList.toggle('disabled', currentIndex === 0);
+    rightArrow.classList.toggle('disabled', currentIndex >= maxIndex);
 }
 
-// Sửa lại sự kiện dot: lấy đúng số dot và gán sự kiện
-document.querySelectorAll('.dot').forEach((dot, i) => {
-    dot.onclick = () => showSlides(i);
-});
+function moveSlide(n) {
+    currentIndex += n;
+    showSlides();
+}
 
-// Sửa lại sự kiện arrow
-document.querySelector('.carousel-arrow.left').onclick = () => showSlides(currentIndex - 1);
-document.querySelector('.carousel-arrow.right').onclick = () => showSlides(currentIndex + 1);
+function currentSlide(n) {
+    currentIndex = n;
+    showSlides();
+}
 
-// Khởi tạo lại khi resize
-window.addEventListener('resize', () => showSlides(currentIndex));
-document.addEventListener('DOMContentLoaded', () => showSlides(0));
-
-// function moveSlide(n) {
-//     currentIndex += n;
-//     showSlides(n);
-// }
-
-// function currentSlide(n) {
-//     currentIndex = n;
-//     showSlides(n);
-// }
-
-
-// Khởi động carousel
-showSlides();
+document.addEventListener('DOMContentLoaded', showSlides);
+window.addEventListener('resize', showSlides);

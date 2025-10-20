@@ -14,6 +14,7 @@ const menu = document.getElementById('menu');
 
 mobileMenu.addEventListener('click', () => {
     menu.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
 });
 
 
@@ -36,38 +37,37 @@ document.getElementById('search-input').addEventListener('keypress', function (e
 document.addEventListener('DOMContentLoaded', function() {
     const currentFlag = document.getElementById('currentFlag');
     const dropdownContent = document.getElementById('dropdownContent');
-    const vnFlag = document.getElementById('vnFlag');
-    
+    const dropdownFlag = document.getElementById('vnFlag'); // The single flag in the dropdown
+
     const ukFlagSrc = './static/img/ukflag.png';
     const vnFlagSrc = './static/img/vnflag.png';
 
-    // Thiết lập biến để theo dõi trạng thái cờ hiện tại
-    let isUKFlag = true; 
-
-    // Sự kiện khi nhấn vào cờ hiện tại
+    // Sự kiện khi nhấn vào cờ hiện tại để mở/đóng dropdown
     currentFlag.addEventListener('click', function() {
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block'; // Chuyển đổi hiển thị dropdown
+        // Cập nhật lá cờ trong dropdown để hiển thị lựa chọn còn lại
+        if (currentFlag.src.includes('ukflag.png')) {
+            dropdownFlag.src = vnFlagSrc;
+            dropdownFlag.alt = "Vietnam Flag";
+        } else {
+            dropdownFlag.src = ukFlagSrc;
+            dropdownFlag.alt = "UK Flag";
+        }
+        // Hiển thị hoặc ẩn dropdown
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Sự kiện khi nhấn vào cờ Việt Nam
-    vnFlag.addEventListener('click', function() {
-        currentFlag.src = vnFlagSrc;
-        dropdownContent.style.display = 'none';
+    // Sự kiện khi chọn một cờ từ dropdown
+    dropdownFlag.addEventListener('click', function() {
+        const tempSrc = currentFlag.src;
+        currentFlag.src = dropdownFlag.src;
+        dropdownFlag.src = tempSrc; // Cập nhật lại cờ trong dropdown cho lần mở tiếp theo
+        dropdownContent.style.display = 'none'; // Ẩn dropdown sau khi chọn
     });
-
-    // Sự kiện khi nhấn vào cờ Anh (nếu có dropdown chứa cờ Anh)
-    const ukFlag = document.getElementById('ukFlag');
-    if (ukFlag) {
-        ukFlag.addEventListener('click', function() {
-            currentFlag.src = ukFlagSrc;
-            dropdownContent.style.display = 'none';
-        });
-    }
 
     // Ẩn dropdown khi nhấn ra ngoài
     document.addEventListener('click', function(event) {
         if (!event.target.closest('.flag-dropdown')) {
-            dropdownContent.style.display = 'none'; // Ẩn dropdown khi nhấn ra ngoài
+            dropdownContent.style.display = 'none';
         }
     });
 });
@@ -89,6 +89,7 @@ menuOptions.forEach(option => {
     });
 }); */
 
+// Change hover menu (type 3)
 document.addEventListener('scroll', function() {
     const sections = [
         { id: 'option1', menuIndex: 0 },
@@ -117,6 +118,8 @@ document.addEventListener('scroll', function() {
     });
 });
 
+
+// Popup contact
 document.addEventListener('DOMContentLoaded', function() {
     const contactUI = document.getElementById('contact-ui');
     const contactPopup = document.getElementById('contact-popup');
@@ -137,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hiện popup khi click
     if (contactUI && contactPopup) {
         contactUI.addEventListener('click', function() {
+            contactUI.style.display = 'none'; // Ẩn nút contact
             contactPopup.classList.remove('hidden');
         });
     }
@@ -144,9 +148,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Đóng popup khi click dấu X
     if (closeContactPopup && contactPopup) {
         closeContactPopup.addEventListener('click', function() {
+            contactUI.style.display = 'flex'; // Hiện lại nút contact
             contactPopup.classList.add('hidden');
         });
     }
 });
-
-

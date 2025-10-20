@@ -18,40 +18,40 @@
 
 <!-- <div class="container">
     <div class="content">
-        abc 
+        abc zzz
     </div>
 </div> -->
 
 <!-- Menu -->
 <nav class="navbar-menu container-menu" id="menuscroll">
-    <a class="logo-menu estuary-solutions" href="/">
-        <img src="static/img/logo_es.png" alt="Estuary Solutions Logo">
+    <a class=" estuary-solutions" href="/">
+        <img class="logo-menu" src="static/img/logo_es.png" alt="Estuary Solutions Logo">
     </a>
-    <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+    <div class="navbar-right-controls">
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="flag-dropdown">
+            <img src="./static/img/ukflag.png" alt="UK Flag" class="current-flag" id="currentFlag">
+            <div class="dropdown-content-flag" id="dropdownContent">
+                <img src="./static/img/vnflag.png" alt="Vietnam Flag" class="dropdown-flag" id="vnFlag">
+            </div>
+        </div>
     </div>
     <div class="menu" id="menu">
         <a class="active" href="#option1"><div class="menu-option active" data-target="option1">About us</div></a>
         <a  href="#option2"><div class="menu-option" data-target="option2">Our solutions</div></a> 
         <a  href="#option3"><div class="menu-option" data-target="option3">News</div></a>
         <div class="search-container-menu">
-            <input id="search-input" type="text" placeholder="Search">
             <span class="search-icon-menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.397l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85zm-5.742.656a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
-                </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.397l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85zm-5.742.656a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+            </svg>
             </span>
-        </div>
+            <input id="search-input" type="text" placeholder="Search">
 
-
-        <div class="flag-dropdown">
-        <img src="./static/img/ukflag.png" alt="UK Flag" class="current-flag" id="currentFlag">
-            <div class="dropdown-content-flag" id="dropdownContent">
-            <img src="./static/img/vnflag.png" alt="Vietnam Flag" class="dropdown-flag" id="vnFlag">
-            <img src="./static/img/ukflag.png" alt="UK Flag" class="dropdown-flag" id="ukFlag">
-            </div>
         </div>
 
     </div>
@@ -67,7 +67,7 @@
         <p>Estuary helps multinational companies and leading local enterprises in Asia Pacific significantly enhance engagements with stakeholders across their distribution channels, acquire extra insights in real-time, and ultimately boost sales performance, as far-reaching as sell-out.</p>
         </div>
     </div>
-    <div class="column-middle"></div>
+
     <div class="column-right">
         <img class="img-banner"  src="static/img/Banner_est.png" alt="Placeholder Image">
     </div>
@@ -76,29 +76,34 @@
 <!-- Giải pháp 6 ô -->
 
 <div class="mega-container-a">
-<h2 style="color: #29abe2; margin: 100px 150px 20px; font-size: 26px;">Our Solutions</h2>
+<h2 class="title-content">Our Solutions</h2>
 <div class="container-content-a menu-title-item" id="option2">
     <div class="content-box-a">
-        <h2 class="title-a">Salesforce Automation & CRM <br> (SaleX)</h2>
-        <div class="divider-a"></div>
-        <p class="text-a">A software solution that helps maximize sales performance by empowering sales teams with digital tools (e.g. e-detailing, automatic sales route allocation, etc.) to discover, recruit, service, and manage customers on top of the traditional approaches.</p>
-        <p class="text-a">Through SaleX, sales managers and decision makers are empowered with real-time data and automated tools (e.g. performance alert, etc.) to effectively manage and direct their sales team.</p>
+        <div class="content-box-text-wrapper">
+            <h2 class="title-a">Salesforce Automation & CRM <br> (SaleX)</h2>
+            <div class="divider-a"></div>
+            <p class="text-a">A software solution that helps maximize sales performance by empowering sales teams with digital tools (e.g. e-detailing, automatic sales route allocation, etc.) to discover, recruit, service, and manage customers on top of the traditional approaches.</p>
+            <p class="text-a">Through SaleX, sales managers and decision makers are empowered with real-time data and automated tools (e.g. performance alert, etc.) to effectively manage and direct their sales team.</p>
+        </div>
         <div class="image-a">
         <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
             <dotlottie-wc src="https://lottie.host/72563390-ca5b-4376-939f-d8584e16041f/5GX2SsbpKm.lottie" style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
         </div>
         <div class="view-box-a">
-            <span style="text-align: left;">View Details</span>
+            <span >View Details</span>
             <span class="arrow-a">&#8594;</span>
         </div>  
     </div>
 
     <div class="content-box-a">
-        <h2 class="title-a">Customer Engagement Platform <br> (EngageX)</h2>
-        <div class="divider-a"></div>
-        <p class="text-a">
-            A software solution for companies to digitally engage their (i) consumers, (ii) influencers, and (iii) distributors with execution scope and speed vastly superior to those of traditional methods (e.g. off-line detailing, physical vouchers, etc.).<br><br>
-            Unlike the traditional approaches that offer limited data feedbacks, clients with EngageX may aggregate large amount of relevant data from stakeholders to unlock the full potentials of their businesses.
+        <div class="content-box-text-wrapper">
+            <h2 class="title-a">Customer Engagement Platform <br> (EngageX)</h2>
+            <div class="divider-a"></div>
+            <p class="text-a">
+                A software solution for companies to digitally engage their (i) consumers, (ii) influencers, and (iii) distributors with execution scope and speed vastly superior to those of traditional methods (e.g. off-line detailing, physical vouchers, etc.).<br><br>
+                Unlike the traditional approaches that offer limited data feedbacks, clients with EngageX may aggregate large amount of relevant data from stakeholders to unlock the full potentials of their businesses.
+            </p>
+        </div>
         <div class="image-a">
             <script
             src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js"
@@ -118,11 +123,13 @@
     </div>
 
     <div class="content-box-a">
-        <h2 class="title-a">Engagement Distributor
-        Management <br> System (eDMS)</h2>
-        <div class="divider-a"></div>
-        <p  class="text-a">This next-gen DMS enhances communication and engagement quality with dealers, order management & after-sales service. Dealers can receive inquiry or order from end-users via the mobile app, a model of O2O.</p>
-        <div style="margin-top: 130px;" class="image-a">
+        <div class="content-box-text-wrapper">
+            <h2 class="title-a">Engagement Distributor
+            Management <br> System (eDMS)</h2>
+            <div class="divider-a"></div>
+            <p  class="text-a">This next-gen DMS enhances communication and engagement quality with dealers, order management & after-sales service. Dealers can receive inquiry or order from end-users via the mobile app, a model of O2O.</p>
+        </div>
+        <div class="image-a">
         <script
         src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js"
         type="module"
@@ -143,9 +150,11 @@
 <!-- --- -->
 
     <div class="content-box-a-down">
-        <h2 style="margin: 20px;" class="title-a">Smart Manufacturing Platform <br> (Nexus)</h2>
-        <div class="divider-a"></div>
-        <p class="text-a">Production line management & supply chain traceability on digital platform.</p>
+        <div class="content-box-text-wrapper">
+            <h2 style="margin: 20px;" class="title-a">Smart Manufacturing Platform <br> (Nexus)</h2>
+            <div class="divider-a"></div>
+            <p class="text-a">Production line management & supply chain traceability on digital platform.</p>
+        </div>
         <div class="image-a">
             <script
             src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js"
@@ -165,10 +174,13 @@
     </div>
 
     <div class="content-box-a-down">
-        <h2 class="title-a">Smart Warehouse Management System (SWMS)</h2>
-        <div class="divider-a"></div>
-        <p class="text-a">
-            Transform warehouse into a high performance & high efficiency centre.
+        <div class="content-box-text-wrapper">
+            <h2 class="title-a">Smart Warehouse Management System (SWMS)</h2>
+            <div class="divider-a"></div>
+            <p class="text-a">
+                Transform warehouse into a high performance & high efficiency centre.
+            </p>
+        </div>
         <div class="image-a">
             <script
         src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js"
@@ -188,9 +200,11 @@
     </div>
 
     <div class="content-box-a-down">
-        <h2 style="margin-top: 50px" class="title-a">E-Learning Platform</h2>
-        <div class="divider-a"></div>
-        <p class="text-a">Online learning & e-Certificate on various digital platforms.</p>
+        <div class="content-box-text-wrapper">
+            <h2 class="title-a">E-Learning Platform</h2>
+            <div class="divider-a"></div>
+            <p class="text-a">Online learning & e-Certificate on various digital platforms.</p>
+        </div>
         <div class="image-a">
             <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
             <dotlottie-wc src="https://lottie.host/72563390-ca5b-4376-939f-d8584e16041f/5GX2SsbpKm.lottie" style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
@@ -224,17 +238,19 @@
 </div>
 
 <!-- slider -->
-<h2 class="menu-title-item" style="color: #29abe2;margin-bottom: 10px; margin-left: 360px; font-size: 26px;">News</h2><br>
-<div id="option3" style="align-items: center;" class="carousel-container">
+<h2 class="title-content" >News</h2><br>
+<div id="option3" class="carousel-container">
        
         <div class="carousel">
             <div class="carousel-slide">
                 <p class="carousel-text1">05 December 2025</p>
                 <img src="./static/img/slide1.png" alt="Image 1">
-                <p class="carousel-text2">Building Loyalty Beyond the Walls: Painting a New Future with EngageX</p>
-                <p class="carousel-text3">- Thousands of users after 6 months of launch
-                    - A thriving community of contractors & painters 
-                    - 2x stronger communication efficiency</p>
+                <div class="carousel-text-content">
+                    <p class="carousel-text2">Building Loyalty Beyond the Walls: Painting a New Future with EngageX</p>
+                    <p class="carousel-text3">- Thousands of users after 6 months of launch
+                        - A thriving community of contractors & painters 
+                        - 2x stronger communication efficiency</p>
+                </div>
                 <div class="carousel-readmore">
                     <a>Read more <span class="arrow-a">&#8594;</span></a>
                 </div>
@@ -242,25 +258,35 @@
             <div class="carousel-slide">
                 <p class="carousel-text1">05 December 2025</p>
                 <img src="./static/img/slide2.png" alt="Image 1">
-                <p class="carousel-text2">“Fun Snack World” – Refreshing a Leading Vietnamese Snack Brand with EngageX Consumer</p>
-                <p class="carousel-text3"> The “Fun Snack World” campaign showcases how a strategic blend of gamification, technology, and consumer insight can transform a brand challenge into a business opportunity.</p>
-                <a class="carousel-readmore">Read more <span class="arrow-a">&#8594;</span></a>
+                <div class="carousel-text-content">
+                    <p class="carousel-text2">“Fun Snack World” – Refreshing a Leading Vietnamese Snack Brand with EngageX Consumer</p>
+                    <p class="carousel-text3"> The “Fun Snack World” campaign showcases how a strategic blend of gamification, technology, and consumer insight can transform a brand challenge into a business opportunity.</p>
+                </div>
+                <div class="carousel-readmore">
+                    <a>Read more <span class="arrow-a">&#8594;</span></a>
+                </div>
             </div>
             <div class="carousel-slide">
                 <p class="carousel-text1">05 December 2025</p>
                 <img src="./static/img/slide3.png" alt="Image 1">   
-                <p class="carousel-text2">How a Milk Brand Captured 1M+ <br>Engagements</p>
-                <p class="carousel-text3">By turning every product into a gateway for digital interaction, the brand re-established relevance and loyalty in a crowded market — and laid the foundation for future, data-driven growth. </p>
-                <a class="carousel-readmore">Read more <span class="arrow-a">&#8594;</span></a>
+                <div class="carousel-text-content">
+                    <p class="carousel-text2">How a Milk Brand Captured 1M+ <br>Engagements</p>
+                    <p class="carousel-text3">By turning every product into a gateway for digital interaction, the brand re-established relevance and loyalty in a crowded market — and laid the foundation for future, data-driven growth. </p>
+                </div>
+                <div class="carousel-readmore">
+                    <a>Read more <span class="arrow-a">&#8594;</span></a>
+                </div>
             </div>
 
             <div class="carousel-slide">
                 <p class="carousel-text1">05 December 2025</p>
                 <img src="./static/img/slide1.png" alt="Image 1">
-                <p class="carousel-text2">Building Loyalty Beyond the Walls: Painting a New Future with EngageX</p>
-                <p class="carousel-text3">- Thousands of users after 6 months of launch
-                    - A thriving community of contractors & painters 
-                    - 2x stronger communication efficiency</p>
+                <div class="carousel-text-content">
+                    <p class="carousel-text2">Building Loyalty Beyond the Walls: Painting a New Future with EngageX</p>
+                    <p class="carousel-text3">- Thousands of users after 6 months of launch
+                        - A thriving community of contractors & painters 
+                        - 2x stronger communication efficiency</p>
+                </div>
                 <div class="carousel-readmore">
                     <a>Read more <span class="arrow-a">&#8594;</span></a>
                 </div>
@@ -268,24 +294,34 @@
             <div class="carousel-slide">
                 <p class="carousel-text1">05 December 2025</p>
                 <img src="./static/img/slide2.png" alt="Image 1">
-                <p class="carousel-text2">“Fun Snack World” – Refreshing a Leading Vietnamese Snack Brand with EngageX Consumer</p>
-                <p class="carousel-text3"> The “Fun Snack World” campaign showcases how a strategic blend of gamification, technology, and consumer insight can transform a brand challenge into a business opportunity.</p>
-                <a class="carousel-readmore">Read more <span class="arrow-a">&#8594;</span></a>
+                <div class="carousel-text-content">
+                    <p class="carousel-text2">“Fun Snack World” – Refreshing a Leading Vietnamese Snack Brand with EngageX Consumer</p>
+                    <p class="carousel-text3"> The “Fun Snack World” campaign showcases how a strategic blend of gamification, technology, and consumer insight can transform a brand challenge into a business opportunity.</p>
+                </div>
+                <div class="carousel-readmore">
+                    <a>Read more <span class="arrow-a">&#8594;</span></a>
+                </div>
             </div>
             <div class="carousel-slide">
                 <p class="carousel-text1">05 December 2025</p>
                 <img src="./static/img/slide3.png" alt="Image 1">   
-                <p class="carousel-text2">How a Milk Brand Captured 1M+ <br>Engagements</p>
-                <p class="carousel-text3">By turning every product into a gateway for digital interaction, the brand re-established relevance and loyalty in a crowded market — and laid the foundation for future, data-driven growth. </p>
-                <a class="carousel-readmore">Read more <span class="arrow-a">&#8594;</span></a>
+                <div class="carousel-text-content">
+                    <p class="carousel-text2">How a Milk Brand Captured 1M+ <br>Engagements</p>
+                    <p class="carousel-text3">By turning every product into a gateway for digital interaction, the brand re-established relevance and loyalty in a crowded market — and laid the foundation for future, data-driven growth. </p>
+                </div>
+                <div class="carousel-readmore">
+                    <a>Read more <span class="arrow-a">&#8594;</span></a>
+                </div>
             </div>
             <div class="carousel-slide">
                 <p class="carousel-text1">05 December 2025</p>
                 <img src="./static/img/slide1.png" alt="Image 1">
-                <p class="carousel-text2">Building Loyalty Beyond the Walls: Painting a New Future with EngageX</p>
-                <p class="carousel-text3">- Thousands of users after 6 months of launch
-                    - A thriving community of contractors & painters 
-                    - 2x stronger communication efficiency</p>
+                <div class="carousel-text-content">
+                    <p class="carousel-text2">Building Loyalty Beyond the Walls: Painting a New Future with EngageX</p>
+                    <p class="carousel-text3">- Thousands of users after 6 months of launch
+                        - A thriving community of contractors & painters 
+                        - 2x stronger communication efficiency</p>
+                </div>
                 <div class="carousel-readmore">
                     <a>Read more <span class="arrow-a">&#8594;</span></a>
                 </div>
@@ -293,32 +329,33 @@
             <div class="carousel-slide">
                 <p class="carousel-text1">05 December 2025</p>
                 <img src="./static/img/slide2.png" alt="Image 1">
-                <p class="carousel-text2">“Fun Snack World” – Refreshing a Leading Vietnamese Snack Brand with EngageX Consumer</p>
-                <p class="carousel-text3"> The “Fun Snack World” campaign showcases how a strategic blend of gamification, technology, and consumer insight can transform a brand challenge into a business opportunity.</p>
-                <a class="carousel-readmore">Read more <span class="arrow-a">&#8594;</span></a>
+                <div class="carousel-text-content">
+                    <p class="carousel-text2">“Fun Snack World” – Refreshing a Leading Vietnamese Snack Brand with EngageX Consumer</p>
+                    <p class="carousel-text3"> The “Fun Snack World” campaign showcases how a strategic blend of gamification, technology, and consumer insight can transform a brand challenge into a business opportunity.</p>
+                </div>
+                <div class="carousel-readmore">
+                    <a>Read more <span class="arrow-a">&#8594;</span></a>
+                </div>
             </div>
             <div class="carousel-slide">
                 <p class="carousel-text1">05 December 2025</p>
                 <img src="./static/img/slide3.png" alt="Image 1">   
-                <p class="carousel-text2">How a Milk Brand Captured 1M+ <br>Engagements</p>
-                <p class="carousel-text3">By turning every product into a gateway for digital interaction, the brand re-established relevance and loyalty in a crowded market — and laid the foundation for future, data-driven growth. </p>
-                <a class="carousel-readmore">Read more <span class="arrow-a">&#8594;</span></a>
+                <div class="carousel-text-content">
+                    <p class="carousel-text2">How a Milk Brand Captured 1M+ <br>Engagements</p>
+                    <p class="carousel-text3">By turning every product into a gateway for digital interaction, the brand re-established relevance and loyalty in a crowded market — and laid the foundation for future, data-driven growth. </p>
+                </div>
+                <div class="carousel-readmore">
+                    <a>Read more <span class="arrow-a">&#8594;</span></a>
+                </div>
             </div>
 
-        </div>
-         <div class="carousel-arrow left" onclick="moveSlide(-1)">&#10094;</div>
+        </div>  
+        <div class="carousel-arrow left" onclick="moveSlide(-1)">&#10094;</div>
         <div class="carousel-arrow right" onclick="moveSlide(1)">&#10095;</div>
 
 </div>
-    <div class="dots-container">
-        <span class="dot" onclick="currentSlide(0)"></span>
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
-        <span class="dot" onclick="currentSlide(6)"></span>
-    </div> <br>
+    <div class="dots-container"></div> 
+    <br>
 
 <!-- footer -->
 <footer>
@@ -360,9 +397,9 @@
 </footer>
 
 <div id="contact-ui">
-    <div class="arrow-up-wrapper">
+    <!-- <div class="arrow-up-wrapper">
         <div class="arrow-up">&#8593;</div></a>
-    </div>
+    </div> -->
     
 <!-- <button onclick="topFunction()" id="menuscroll" title="Go to top"><i class="fa fa-arrow-up"></i></button> -->
     <div class="contact-rect">
@@ -384,7 +421,6 @@
         </div>
     </div>
 </div>
-
 
 <script src="./main.js"></script>
 <script src="./slider.js"></script>
