@@ -682,7 +682,6 @@ html{
 
 .carousel-slide img:hover {
     transform: scale(1.08);
-
 }
 
 .carousel-text-content {
@@ -723,9 +722,8 @@ html{
     padding-bottom: 10px; /* giãn cách bên dưới */
 }
 
-/* Khi hover vào ảnh trong slide, chữ "Read more" sẽ đổi màu */
-.carousel-slide img:hover ~ .carousel-readmore a,
-.carousel-slide img:hover ~ .carousel-text-content ~ .carousel-readmore a {
+/* Khi hover vào vùng ảnh trong slide, chữ "Read more" sẽ đổi màu */
+.carousel-slide .carousel-image-wrapper:hover ~ .carousel-readmore a {
     color: rgb(39, 57, 223);
 }
 
