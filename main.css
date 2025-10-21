@@ -392,18 +392,18 @@ html{
 
 .container-content-a {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    align-items: flex-start; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tạo layout 3 cột */
+    gap: 40px; /* Khoảng cách giữa các ô */
+    padding: 0 40px; /* Thêm padding cho container */
 }
 
 .content-box-a {
     background-color: white; 
     border-radius: 8px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: calc(30% - 40px); 
-    margin: 20px; 
+    /* width: calc(30% - 40px); */ /* Không cần nữa khi dùng grid */
+    /* margin: 20px; */ /* Không cần nữa khi dùng grid gap */
     /* max-height: 850px; */
     min-height: 750px;
     display: flex;
@@ -411,16 +411,17 @@ html{
     /* justify-content: space-between; */ /* Xóa thuộc tính này để các mục căn lề trên */
 }
 
+
 @media (max-width: 1024px) {
     .content-box-a {
-        width: calc(50% - 40px); /* 2 cột, trừ margin cho đẹp */
-        min-width: unset;
+        /* width: calc(50% - 40px); */ /* Không cần nữa */
+        /* min-width: unset; */
     }
 }
 
 @media (max-width: 768px) {
     .content-box-a {
-        min-width: 80%;
+        /* min-width: 80%; */ /* Không cần nữa */
     }
 }
 
@@ -428,11 +429,6 @@ html{
     .content-box-a .content-box-a-down {
         width: calc(50% - 40px); 
         min-height: 750px;
-            display: -webkit-box; /* Thiết lập để sử dụng -webkit-line-clamp */
-    -webkit-box-orient: vertical; /* Định hướng chiều dọc */
-    -webkit-line-clamp: 6; 
-    overflow: hidden; /* Ẩn phần văn bản thừa */
-        text-overflow: ellipsis; /* Hiển thị 3 chấm (...) */
     }
 }
 
@@ -440,26 +436,26 @@ html{
     background-color: white; 
     border-radius: 8px; /* Bo góc cho ô */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: calc(30% - 40px); 
-    margin: 20px; 
+    /* width: calc(30% - 40px); */ /* Không cần nữa */
+    /* margin: 20px; */ /* Không cần nữa */
     min-height: 600px;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */ /* Xóa thuộc tính này để các mục căn lề trên */
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) { /* Tablet: 2 cột */
+    .container-content-a {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .content-box-a-down {
-        width: calc(50% - 40px); /* 2 cột, trừ margin cho đẹp */
-        min-width: unset;
         min-height: 750px;
     }
 }
 
-/* Media Query cho Mobile */
-@media (max-width: 768px) {
-    .content-box-a-down {
-        min-width: 80%;
+@media (max-width: 768px) { /* Mobile: 1 cột */
+    .container-content-a {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -495,6 +491,7 @@ html{
 .image-a {
     width: 100%;
     height: 100%;
+    padding: 10px;
     border-radius: 8px; 
     display: flex; 
     justify-content: center; 
