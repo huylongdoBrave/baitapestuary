@@ -88,23 +88,25 @@ html{
     height: 8px;
     background-color: transparent; 
     position: absolute;
-    left: 0;
+    left: 50%; /* Bắt đầu từ giữa */
+    transform: translateX(-50%) scaleX(0); /* Ẩn và căn giữa */
     bottom: 0; /* Khoảng cách từ chữ đến đường kẻ */
     transition: transform 0.3s ease; /* Hiệu ứng chuyển động */
-    /* opacity: 1; /* alway show */ 
-    /* transform: scaleX(0); /* Ẩn đường kẻ ban đầu */ 
 }
 
 .menu a.active::after{
-    /* transform: translateY(-3px); /* Đẩy chữ lên 1 chút khi hover */ 
-    /* transform: scaleX(1); */
     border-bottom: 3px solid #2596be; /* Đường kẻ nằm dưới chữ */
-    height: 8px;
-
+    transform: translateX(-50%) scaleX(1); /* Hiện đường kẻ */
 }
 
 .menu a:hover{
-    font-size: 18px;
+    transform: scale(1.1); /* Phóng to chữ mà không ảnh hưởng layout */
+}
+
+/* Thêm đường viền dưới màu nhạt khi hover vào mục không active */
+.menu a:not(.active):hover::after {
+    border-bottom: 3px solid #41b5df; 
+    transform: translateX(-50%) scaleX(1); /* Hiện đường kẻ */
 }
 
 /* -- */
@@ -402,9 +404,6 @@ html{
     background-color: white; 
     border-radius: 8px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* width: calc(30% - 40px); */ /* Không cần nữa khi dùng grid */
-    /* margin: 20px; */ /* Không cần nữa khi dùng grid gap */
-    /* max-height: 850px; */
     min-height: 750px;
     display: flex;
     flex-direction: column;
@@ -412,23 +411,10 @@ html{
 }
 
 
-@media (max-width: 1024px) {
-    .content-box-a {
-        /* width: calc(50% - 40px); */ /* Không cần nữa */
-        /* min-width: unset; */
-    }
-}
-
-@media (max-width: 768px) {
-    .content-box-a {
-        /* min-width: 80%; */ /* Không cần nữa */
-    }
-}
-
 @media (max-width: 1024px) and (min-width: 769px)  {
     .content-box-a .content-box-a-down {
         width: calc(50% - 40px); 
-        min-height: 750px;
+        min-height: 700px;
     }
 }
 
@@ -437,7 +423,6 @@ html{
     border-radius: 8px; /* Bo góc cho ô */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     /* width: calc(30% - 40px); */ /* Không cần nữa */
-    /* margin: 20px; */ /* Không cần nữa */
     min-height: 600px;
     display: flex;
     flex-direction: column;
@@ -677,7 +662,9 @@ html{
     overflow: hidden;
 }   
 
-.carousel-slide img:hover {
+.carousel-slide img:hover,
+.carousel-slide:has(.carousel-readmore a:hover) .carousel-image-wrapper img {
+
     transform: scale(1.08);
 }
 
@@ -715,12 +702,13 @@ html{
 .carousel-readmore{
     color: #3bb2e4;
     text-align: left;
-    margin-top: auto; /* Đẩy mục này xuống dưới cùng */
+    margin-top: auto; /* Đẩy mục này xuống dưới cùng */    
     padding-bottom: 10px; /* giãn cách bên dưới */
+        cursor: pointer; 
 }
 
-/* Khi hover vào vùng ảnh trong slide, chữ "Read more" sẽ đổi màu */
-.carousel-slide .carousel-image-wrapper:hover ~ .carousel-readmore a {
+.carousel-slide .carousel-image-wrapper:hover ~ .carousel-readmore a,
+.carousel-readmore a:hover {
     color: rgb(39, 57, 223);
 }
 
@@ -1088,7 +1076,9 @@ html{
 /* Mobile */
 @media (max-width: 768px) {
     .contact-popup {
-        left: 80%;
+        left: auto; /* Bỏ căn lề trái */
+        right: 10px;
+        transform: translateY(-50%); /* Chỉ căn giữa theo chiều dọc */
         width: 90%;
         max-width: 220px;
     }
