@@ -100,7 +100,7 @@ html{
 }
 
 .menu a:hover{
-    transform: scale(1.1); /* Phóng to chữ mà không ảnh hưởng layout */
+    transform: scale(1.06); /* Phóng to chữ mà không ảnh hưởng layout */
 }
 
 /* Thêm đường viền dưới màu nhạt khi hover vào mục không active */
